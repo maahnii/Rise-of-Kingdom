@@ -6,6 +6,8 @@ def set_base_stats(civ):
     # Currently only for T5 builds                               #
     ##############################################################
     base = default_stats()
+    # base = [ia id ih ca cd ch aa ad ah sa sd sh]
+
     #infantry Civilizations
     if civ == 'Rome':
         base[0] = 221
