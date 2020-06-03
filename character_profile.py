@@ -17,7 +17,6 @@ class Character:
         self.skin = ''
         self.title = ''
         
-        
     def city_theme_buffs(self,skin):
         self.skin = skin
         buffs = set_city_buffs(skin)
@@ -52,7 +51,38 @@ class Character:
         self.defense_buffs([build[1],build[4],build[7]])
         self.attack_buffs([build[0],build[3],build[6]])
         self.health_buffs([build[2],build[5],build[8]])
-
+        
+    def vip_buffs(self,vip):
+        buffs = set_vip_buffs(vip)
+        self.defense_buffs([buffs[1],buffs[4],buffs[7]])
+        self.attack_buffs([buffs[0],buffs[3],buffs[6]])
+        self.health_buffs([buffs[2],buffs[5],buffs[8]])
+        self.rally_buffs(buffs[13])
+        self.skill_buffs(buffs[12])
+        self.counter_buffs(buffs[14])
+        
+    def change_civ(self,civ):
+        buffs = set_civ_buffs(self.civ)
+        remove_buffs = [i * -1 for i in buffs]
+        self.defense_buffs([remove_buffs[1],remove_buffs[4],remove_buffs[7]])
+        self.attack_buffs([remove_buffs[0],remove_buffs[3],remove_buffs[6]])
+        self.health_buffs([remove_buffs[2],remove_buffs[5],remove_buffs[8]])
+        self.rally_buffs(remove_buffs[13])
+        self.skill_buffs(remove_buffs[12])
+        self.civilization(civ)
+        
+    def civilization(self,civ):
+        buffs = set_civ_buffs(civ)
+        base = set_base_stats(civ)
+        self.base_stats(base)
+        self.civ = civ
+        self.defense_buffs([buffs[1],buffs[4],buffs[7]])
+        self.attack_buffs([buffs[0],buffs[3],buffs[6]])
+        self.health_buffs([buffs[2],buffs[5],buffs[8]])
+        self.rally_buffs(buffs[13])
+        self.skill_buffs(buffs[12])
+        
+        
     def base_stats(self,stats):
         #Base stats for character
         self.ia = stats[0]
@@ -67,28 +97,6 @@ class Character:
         self.sa = stats[9]
         self.sd = stats[10]
         self.sh = stats[11]
-        
-    def vip_buffs(self,vip):
-        buffs = set_vip_buffs(vip)
-        self.defense_buffs([buffs[1],buffs[4],buffs[7]])
-        self.attack_buffs([buffs[0],buffs[3],buffs[6]])
-        self.health_buffs([buffs[2],buffs[5],buffs[8]])
-        self.rally_buffs(buffs[13])
-        self.skill_buffs(buffs[12])
-        self.counter_buffs(buffs[14])
-        
-        
-    def civilization(self,civ):
-        #I need to make it where if you change civilization, you have to remove previous buffs
-        buffs = set_civ_buffs(civ)
-        base = set_base_stats(civ)
-        self.base_stats(base)
-        self.civ = civ
-        self.defense_buffs([buffs[1],buffs[4],buffs[7]])
-        self.attack_buffs([buffs[0],buffs[3],buffs[6]])
-        self.health_buffs([buffs[2],buffs[5],buffs[8]])
-        self.rally_buffs(buffs[13])
-        self.skill_buffs(buffs[12])
         
     def attack_buffs(self,buffs):
         if buffs == []:

@@ -33,11 +33,11 @@ troop_amount = 200000
 
 
 
-kevin = Character('Germany')
+kevin = Character('Ottoman')
 print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
 #kevin.civilization('Germany')
 #print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
-kevin.city_theme_buffs('Hidden Lotus')
+kevin.city_theme_buffs('No Place Like Home')
 print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
 kevin.technology_buffs(tech)
 print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
@@ -48,5 +48,8 @@ print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.bu
 kevin.building_buffs(building)
 print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
 kevin.vip_buffs(vip)
-print(kevin.aa,kevin.sh,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
+print(kevin.aa,kevin.ad,kevin.ah,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
+print(kevin.buffs_ia,kevin.buffs_id,kevin.buffs_ih,kevin.buffs_ca,kevin.buffs_cd,kevin.buffs_ch,kevin.buffs_aa,kevin.buffs_ad,kevin.buffs_ah,kevin.buffs_skill,kevin.buffs_rally,kevin.buffs_counter)
+kevin.change_civ('Germany')
+print(kevin.aa,kevin.ad,kevin.ah,kevin.buffs_ca,kevin.buffs_id,kevin.buffs_skill,kevin.buffs_rally,kevin.ca)
 print(kevin.buffs_ia,kevin.buffs_id,kevin.buffs_ih,kevin.buffs_ca,kevin.buffs_cd,kevin.buffs_ch,kevin.buffs_aa,kevin.buffs_ad,kevin.buffs_ah,kevin.buffs_skill,kevin.buffs_rally,kevin.buffs_counter)
