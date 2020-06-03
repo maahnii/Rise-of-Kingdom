@@ -60,3 +60,4 @@ def default_stats():
     #Function sets base stats with no expertise
     #[ia,id,ih,ca,cd,ch,aa,ad,ah,sa,sd,sh,skill,rally,counter]
     return [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
